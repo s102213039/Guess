@@ -11,14 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val secretNumber = SecretNumber()
+        val secretNumber = SecretNumber(this)
 
 
         btn_validate.setOnClickListener {
             AlertDialog.Builder(this)
-                .setTitle("Result")
+                .setTitle(getString(R.string.dialog_title))
                 .setMessage(secretNumber.validate(ed_number.text.toString().toInt()))
-                .setPositiveButton("OK", null)
+                .setPositiveButton(getString(R.string.ok), null)
                 .show()
         }
 

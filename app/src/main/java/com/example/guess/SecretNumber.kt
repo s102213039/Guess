@@ -1,10 +1,11 @@
 package com.example.guess
 
+import android.content.Context
 import java.util.*
 
 
-class SecretNumber {
-    val secretNumber = Random().nextInt(10) + 1
+class SecretNumber (private val context: Context){
+    private val secretNumber = Random().nextInt(10) + 1
     var count = 0
 
     fun validate(num: Int): String {
@@ -12,11 +13,11 @@ class SecretNumber {
         val result = num - secretNumber
         val resultText: String
         if (result > 0) {
-            resultText = "smaller"
+            resultText = context.getString(R.string.smaller)
         } else if (result < 0) {
-            resultText = "bigger"
+            resultText = context.getString(R.string.bigger)
         } else {
-            resultText = "you got it!"
+            resultText = context.getString(R.string.you_got_it)
         }
         return resultText
     }
