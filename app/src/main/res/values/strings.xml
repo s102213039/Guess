@@ -8,4 +8,5 @@
     <string name="smaller">smaller</string>
     <string name="bigger">bigger</string>
     <string name="you_got_it">you got it!</string>
+    <string name="title_activity_material">MaterialActivity</string>
 </resources>

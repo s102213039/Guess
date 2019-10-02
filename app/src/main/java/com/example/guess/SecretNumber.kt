@@ -4,8 +4,8 @@ import android.content.Context
 import java.util.*
 
 
-class SecretNumber (private val context: Context){
-    private val secretNumber = Random().nextInt(10) + 1
+class SecretNumber(private val context: Context) {
+    var secretNumber = Random().nextInt(10) + 1
     var count = 0
 
     fun validate(num: Int): String {
@@ -20,6 +20,11 @@ class SecretNumber (private val context: Context){
             resultText = context.getString(R.string.you_got_it)
         }
         return resultText
+    }
+
+    fun reset() {
+        secretNumber = Random().nextInt(10) + 1
+        count = 0
     }
 
 
